@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.1 on darwin)" generated="20210822 20:39:27.559" rpa="false" schemaversion="2">
+<suite id="s1" name="Claseif" source="/Users/augusto607/Documents/Learning/QA/QA_Robot_Framework/automations/claseif.robot">
+<test id="s1-t1" name="002 Caso de prueba para validar con condicional if">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${homepage}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210822 20:39:27.782" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20210822 20:39:27.781" endtime="20210822 20:39:33.048"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="header_logo"]/a/img</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210822 20:39:33.049" endtime="20210822 20:39:33.072"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${seleccion}'=='Women'</arg>
+<arg>Select Women Option</arg>
+<arg>ELSE</arg>
+<arg>Select Dresses Option</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Select Dresses Option">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="block_top_menu"]/ul/li[2]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210822 20:39:33.073" level="INFO">Clicking element 'xpath=//*[@id="block_top_menu"]/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20210822 20:39:33.073" endtime="20210822 20:39:35.011"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Dresses - My Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20210822 20:39:35.017" level="INFO">Page title is 'Dresses - My Store'.</msg>
+<status status="PASS" starttime="20210822 20:39:35.011" endtime="20210822 20:39:35.017"/>
+</kw>
+<status status="PASS" starttime="20210822 20:39:33.073" endtime="20210822 20:39:35.018"/>
+</kw>
+<status status="PASS" starttime="20210822 20:39:33.072" endtime="20210822 20:39:35.018"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210822 20:39:38.019" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210822 20:39:35.018" endtime="20210822 20:39:38.019"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210822 20:39:38.020" endtime="20210822 20:39:38.129"/>
+</kw>
+<status status="PASS" starttime="20210822 20:39:27.780" endtime="20210822 20:39:38.129"/>
+</test>
+<status status="PASS" starttime="20210822 20:39:27.562" endtime="20210822 20:39:38.130"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Claseif">Claseif</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
