@@ -1,0 +1,487 @@
+=================================================================================================
+QA basico y Robot framework
+=================================================================================================
+Begin: 4 August 2021
+
+# Seccion 2: Fundamentos del Aseguramiento de Calidad
+    - Introduccion al quality assurance o al aseguramiento de calidad
+        La calidad es medible y se mide a traves de los requerimientos y las  especificaciones
+
+        El aseguramiento de calidad se encarga de revisar que diferentes caracteristicas solicitadas por el usuario se encuentren
+        incluidas y que el sistema cumple con los requerimientos del cliente y del modelo de negocio antes de liberar el producto 
+        final.
+
+    - Niveles y tipos de pruebas
+        Los niveles de pruebas son basicamente para identificar areas perdidas y prevenir la superposicion y repeticion en los ciclos de desarrollo
+
+        Los 3 niveles principales de testing son:
+            - PRUEBAS UNITARIAS
+                Es un metodo que prueba una unidad pequeña de codigo
+
+            - PRUEBAS DE INTEGRACION 
+                Se llevan a cabo justo despues de las pruebas unitarias y permiten determinar la interaccion entre diferentes bloques de codigo.
+
+            - PRUEBAS DE SISTEMA 
+                Son ejecutadas por un equipo diferente al de desarrollo y generalmente son planificadas y documentadas.
+
+    - Planes de prueba
+        Es un documento que te ayudara a organizar la cobertura que vas a hacer del sistema.
+
+        En los recursos del curso tenemos toda la informacion y la plantilla de un documento de plan de pruebas en español ../Resources
+
+    - Casos de prueba 
+        Son generalmente un guion de acciones donde se detalla los pasos que se deben llevar a cabo para obtener una respuesta determinada,
+        generalmente se incluyen en estos las pre-condiciones, pasos de la prueba y sus resultados.
+
+    - Pruebas manuales vs automatizacion
+        * Pruebas Manuales 
+            - Pros
+                * Las pruebas a corto plazo cuestan menos
+                * Generan un escenario mas parecido al del usuario
+                * Son mas flexibles
+
+            - Contras
+                * Algunas tareas son muy dificiles de probar manualmente 
+                * No es una tarea estimulante
+                * No se pueden utilizar los resultados de pruebas manuales cuando el sistema cambia
+                * No son del todo precisas por errores humanos 
+                * Consumen mucho tiempo y recursos humanos 
+                * Requieren de una mayor inversion para contratar personal
+
+            - Escenario ideal
+                * Pruebas exploratorias de analisis y logica
+                * Pruebas de usabilidad
+                * Pruebas de adhoc donde no es requerido ningun guion
+        
+        * Pruebas Automatizadas  
+            - Pros
+                * Correr las pruebas es rapido y efectivo
+                * A largo plazo su costo es mucho menor 
+                * Todos pueden ver los resultados al entrar en los informes generados o revisando los codigos
+                * Son mas interezantes de desarrollar
+
+            - Contras
+                * Las herramientas pueden ser muy costosas 
+                * Desarrollar las pruebas requieren de una inversion de tiempo
+                * Las herramientas tienen limitaciones
+
+            - Escenario ideal 
+                * Pruebas de regresion, de carga y de rendimiento.
+
+    - Functional testing y Regression testing 
+        Las pruebas funcionales: 
+            Te ayudan a contemplar mejor el sistema y son el primer paso para detectar fallos , se llevan 
+            a cabo tomando en cuenta los requerimientos presentados previamente por los interesados y usuarios del sistema, En este
+            nivel se garantiza que el sistema cumple con los requisitos minimos para salir a produccion.
+
+            Fases o procedimientos determinados para ejecutar las pruebas funcionales:
+                - Analisis de requerimientos (inicio): Revision de la documentacion entregada que es la base para elaborar los casos 
+                de prueba.
+
+                - Elaboracion del plan de pruebas: Elaboracion del documento que sera entregado al jefe del proyecto 
+
+                - Elaboracion de casos de pruebas: Diseño de los casos de prueba que se utilizaran para realizar la certificacion del 
+                software validando que cumpla con lo solicitado por el usuario.
+
+                - Ejecucion: Se ejecutan los casos de pruebas diseñados y se reportan las incidencias detectadas al jefe de proyecto.
+
+                - Elaboracion reporte de cierre: Reporte final con los resultados de las pruebas de certificacion del software.
+
+        Las pruebas de regresion:
+            Son las pruebas que se le realizan a un programa probado previamente y que ha sufrido nuevas modificaciones(Se deberian correr en 
+            cada sprint).
+
+    - Metodologias agiles: SCRUM
+        Scrum es una metodologia para trabajar en equipos a partir de iteracciones o sprints, su objetivo controlar y planificar proyectos con 
+        un gran volumen de cambios de ultima hora.
+
+        Se suele planificar por semanas, al final de cada sprint se revisa el resultado de la semana anterior, se priorizan y planifican las 
+        actividades en las que invertiremos nuestros recursos del siguiente sprint.
+
+        El tiempo minimo de cada sprint es de 1 semana y el maximo de 4, donde se van revizando los entregables ya que los requerimientos van 
+        variando a corto plazo.
+
+        Roles y resposabilidades dentro de la metodologia SCRUM:
+            - Project Owner: Se asegura de que el proyecto se este desarrollando acorde con la estrategia de negocio, escribe historias de usuario, 
+            las prioriza y las coloca en el Product Backlog
+
+            - Master o Facilitador: Elimina los obstaculos que impiden que el equipo cumpla con los objetivos.
+
+            - Development team member: Encargados de crear el producto para que pueda estar listo con los requerimientos necesarios.
+
+    - Usando Jira
+        Ir a la pagina: https://www.atlassian.com/try
+            Jira software
+                Try cloud
+                    next
+                        En mi caso inicie con mi cuenta de google
+
+        Creamos un proyecto de tipo scrum llamado Google Construction
+            Crear un sprint
+                Dashboard -> Create sprint
+
+                En la barra "What needs to be done" colocas las tareas que necesitas completar durante el sprint
+                Una vez creado el sprint podemos ingresar en las tarjetas y crearles sub-tareas (add a child issue)
+
+    - Herramientas para obtimizar tus pruebas.  Primera Parte  
+        Utilizaremos la herramienta de control de desarrollo de software llamada TestRail, las razones para utilizar esta herramienta son: 
+            * Permite crear casos de pruebas diferentes para cada tipo de pruebas
+            * Permite integracion con otras herramientas de control de desarrollo de software
+            * Provee reportes sencillos de leer e interpretar
+
+    - Probando una funcionalidad en SCRUM 
+        Durante el actual sprint se deben revisar cada uno de los tickets donde estan los requerimientos y empezar a documentar los casos de pruebas, es
+        donde evalumos los escenerios y que podemos evaluar y que no (No se deberian crear los reportes de errores en esta etapa si no cuando la funciona
+        lidad ya se encuentra en produccion) luego en el siguiente sprint se deberian ejecutar las pruebas de regresion.
+
+        * Sprint activo y backlog  
+            El sprint activo se refiere a lo que se esta probando durante el actual lapso de tiempo, mientras que el backlog es lo que se va a realizar en
+            los sigientes sprints.
+
+    - Ciclo de vida de un error (bug)
+        * Nuevo: Cuando se encuentra un bug / reveló por primera vez, el probador de software que se comunica a su / su director de equipo (líder de la prueba) a fin
+        de confirmar si se trata de un error válido. Después de recibir la confirmación de la punta de prueba, el probador de software registra el error y la condición
+        de “Nuevo” se asigna al error.
+
+        * Asignado: Después de que el fallo se indica como ‘Nuevo’, se trata del equipo de desarrollo. El equipo de desarrollo verifica si el error es válida. Si el
+        fallo es válido, el líder de desarrollo se asigna a un desarrollador para arreglarlo y un estado de “asignado” se le da.
+
+        * Abierto: Una vez que el desarrollador comienza a trabajar en el error, él / ella cambia el estado del error de “abrir” para indicar que él / ella está tra
+        bajando en ello para encontrar una solución.
+
+        * Fijo: Una vez que el desarrollador hace los cambios necesarios en el código y verifica el código, él / ella marca el error como ‘fijo’ y lo pasa a la Líder
+        de Desarrollo con el fin de pasar al equipo de pruebas.
+
+        * En espera de Reevaluación: Después de que el error se corrige, se pasa de nuevo al equipo de pruebas para conseguir vueltas a analizar y el estado de “espe
+        ra de repetición de prueba” que se le asigne.
+
+        * Repita la prueba: El líder del equipo de pruebas cambia el estado del error, el cual es previamente marcados con ‘Volver a probar la espera de “a” prueba 
+        adicional “y lo asigna a un probador para volver a probar.
+
+        * Cerrado: Después de que el error se le asigna un estado de “prueba adicional”, es de nuevo la prueba. Si el problema se resuelve, el probador se cierra y 
+        la marca con ‘cerrado’ el estado.
+
+        * Volver a abrir: Si después de volver a probar el software para el bug abierto, si el sistema se comporta de la misma forma o en el mismo error se presenta
+        una vez más, el probador se vuelve a abrir el error una y otra vez lo envía de vuelta a la promotora que marca su condición de “reapertura”.
+
+        * En espera de rechazo: Si los desarrolladores creen que una conducta particular del sistema, que el probador indica que es un error tiene que ser el mismo 
+        y el fallo no es válido, en ese caso, el fallo se rechaza y se marca como «En espera de Rechazo”.
+
+        * Rechazado: Si el líder de pruebas concluye que el sistema está funcionando de acuerdo a las especificaciones o el error no es válido según la explicación 
+        del desarrollo, él / ella rechaza el error y marca su condición de “Rechazado”.
+
+        * Aplazado: A veces, las pruebas de un error en particular tiene que ser pospuesta por un período indefinido. Esta situación puede ocurrir debido a muchas 
+        razones, como la falta de disponibilidad de los datos de prueba, falta de disponibilidad de la funcionalidad en particular, etc Aquella vez, el error está 
+        marcado con «pospuesta» de estado.
+
+        * Diferido: En algunos casos, un error en particular se encuentra ninguna importancia y que se necesita para ser / se puede evitar, en ese momento, se marca
+        rá con una “diferido” de estado.
+
+    - Reportando un error en el sistema 
+        Al encontrar un error el la aplicacion o sistema que se esta testeando se debe generar un reporte de error, este reporte se genera de diferentes maneras
+        segun el la herramienta que se este utilizando.
+
+        en los recursos del curso enconraremos una plantilla de reporte de error en word.
+
+
+# Seccion 3: Robot Framework: Comenzando a Usarlo
+    Es un lenguaje basado en keywords y con capacidades de insercion de datos. 
+
+    Librerias Built In:
+        OperatingSystem, Dialogs, String, XML, Process, Collections, DateTime, Screen Shot
+
+    Librerias Externas (pip install <nombre_libreria>): 
+        Selenium, Appium, FTP, SSH, Database, Diff, Swing, Archive
+
+    - Instalar Robot framework en Mac 
+        Ir a https://robotframework.org/
+            
+            Ejecutar en la terminal:
+                pip install robotframework
+
+    - Selenium2Library y SeleniumLibrary 
+        La libreria Selenium2Library fue deprecada y se utiliza en su lugar SeleniumLibrary la cual esta mas actualizada
+        y es mas completa.
+
+    - Instalar los driver para los diferentes navegadores
+        Desde la terminal ejecutamos: 
+            echo $PATH
+        Para conocer la ruta por defecto de los ejecutables en Mac
+        
+        Nos dirigimos a la ruta:
+            cd /usr/local/bin
+
+        Abrimos esta ruta con el finder
+            open . 
+
+        Dentro de esta ruta pegamos los drivers de los navegadores para que robot framework los encuentre 
+
+    - Instalando SeleniumLibrary
+        Desde la terminal 
+            pip install --upgrade robotframework-seleniumlibrary
+
+    - Convirtiendo primera prueba manual en automatica
+        Creamos el archivo ../automations/firtsautomation.robot :
+
+            *** Settings ***
+            Documentation   Existe un documento de texto con toda la informacion 
+            ...             Primera automatizacion con robot framework
+            Library     SeleniumLibrary
+
+            # Definimos la seccion Test Cases
+            *** Test Case ***
+            # First automation
+            G001 Busqueda de palabras en google
+                # Abrir el navegador google chrome
+                Open Browser     http://google.com/     chrome
+                # Click en aceptar las politicas de google 
+                Click Element   xpath=//*[@id="L2AGLb"]
+                # Esperar a que se carge un elemento de la pagina y lo localizaremos por xpath
+                Wait Until Element Is Visible 	 xpath=/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]
+                # Escribir un texto en el campo de busqueda (El texto sera: Casos de prueba)
+                Input Text   xpath=/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input   Casos de prueba
+                # Click en un elemento cualquiera de la pagina para quitar la barra automatica de sugerencia
+                Click Element   xpath=/html/body/div[1]/div[2]/div/img
+                # Click en el boton buscar con google
+                Click Element    xpath=/html/body/div[1]/div[3]/form/div[1]/div[1]/div[3]/center/input[1]
+                # Verificar el resultado de la busqueda utilizando el titulo de la pagina
+                Title Should Be      Casos de prueba - Google Search
+                # Verificamos si el contenido deseado se encuentra en la pagina
+                Page Should Contain      Casos de prueba
+                # Cerramos el navegador
+                Close Browser
+
+    - Creando un Test Suite (ejecutar un script de prueba)
+        Desde la ruta del archivo en la terminal:
+            robot firstautomation.robot
+
+    - Para las pruebas en el backend se utilizan software Rest Clients, este tipo de pruebas se conocen como pruebas de API
+
+
+# Seccion 4: Mas Pruebas
+    - ROBOT: Creando variables en el caso de prueba
+        Modificamos el archivo ../automations/firtsautomation.robot :
+
+            *** Settings ***
+            Documentation   Existe un documento de texto con toda la informacion 
+            ...             Primera automatizacion con robot framework
+            Library     SeleniumLibrary
+
+            *** Variable ***
+            ${palabrabuscar}    Casos de prueba
+            ${URL}              http://google.com
+            ${Navegador}          chrome
+
+            # Definimos la seccion Test Cases
+            *** Test Case ***
+            # First automation
+            G001 Busqueda de palabras en google
+                # Abrir el navegador google chrome
+                Open Browser     ${URL}     ${Navegador}
+                # Click en aceptar las politicas de google 
+                Click Element   xpath=//*[@id="L2AGLb"]
+                # Esperar a que se carge un elemento de la pagina y lo localizaremos por xpath
+                Wait Until Element Is Visible 	 xpath=/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]
+                # Escribir un texto en el campo de busqueda (El texto sera: Casos de prueba)
+                Input Text   xpath=/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input   ${palabrabuscar}
+                # Click en un elemento cualquiera de la pagina para quitar la barra automatica de sugerencia
+                Click Element   xpath=/html/body/div[1]/div[2]/div/img
+                # Click en el boton buscar con google
+                Click Element    xpath=/html/body/div[1]/div[3]/form/div[1]/div[1]/div[3]/center/input[1]
+                # Verificar el resultado de la busqueda utilizando el titulo de la pagina
+                Title Should Be      ${palabrabuscar} - Google Search
+                # Verificamos si el contenido deseado se encuentra en la pagina
+                Page Should Contain      ${palabrabuscar}
+                # Cerramos el navegador
+                Close Browser
+
+    - ROBOT: Configurando tus propios keywords
+        Modificamos el archivo ../automations/firtsautomation.robot :
+
+            *** Settings ***
+            Documentation   Existe un documento de texto con toda la informacion 
+            ...             Primera automatizacion con robot framework
+            Library     SeleniumLibrary
+
+            *** Variable ***
+            ${palabrabuscar}    Casos de prueba
+            ${URL}              http://google.com
+            ${Navegador}          chrome
+
+            *** Keywords ***
+            Open Browser and validate
+                # Abrir el navegador google chrome
+                Open Browser     ${URL}     ${Navegador}
+                # Click en aceptar las politicas de google 
+                Click Element   xpath=//*[@id="L2AGLb"]
+                # Esperar a que se carge un elemento de la pagina y lo localizaremos por xpath
+                Wait Until Element Is Visible 	 xpath=/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]
+
+            # Definimos la seccion Test Cases
+            *** Test Case ***
+            # First automation
+            G001 Busqueda de palabras en google
+                # Llamamos a nuestra keyword personalizada
+                Open Browser and validate
+                # Escribir un texto en el campo de busqueda (El texto sera: Casos de prueba)
+                Input Text   xpath=/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input   ${palabrabuscar}
+                # Click en un elemento cualquiera de la pagina para quitar la barra automatica de sugerencia
+                Click Element   xpath=/html/body/div[1]/div[2]/div/img
+                # Click en el boton buscar con google
+                Click Element    xpath=/html/body/div[1]/div[3]/form/div[1]/div[1]/div[3]/center/input[1]
+                # Verificar el resultado de la busqueda utilizando el titulo de la pagina
+                Title Should Be      ${palabrabuscar} - Google Search
+                # Verificamos si el contenido deseado se encuentra en la pagina
+                Page Should Contain      ${palabrabuscar}
+                # Cerramos el navegador
+                Close Browser
+
+    - ROBOT: Corriendo las pruebas con archivos de recursos
+        Los recursos son paginas donde configuramos los elementos comunes de las pruebas y luego las importamos para utilizarlos 
+
+        Creamos el archivo ../automations/recursos1.robot :
+
+            *** Settings ***
+            Documentation   Existe un documento de texto con toda la informacion 
+            ...             Primera automatizacion con robot framework
+            Library     SeleniumLibrary
+
+            *** Variable ***
+            ${palabrabuscar}    Casos de prueba
+            ${URL}              http://google.com
+            ${Navegador}        chrome
+
+            *** Keywords ***
+            Open Browser and validate
+                # Abrir el navegador google chrome
+                Open Browser     ${URL}     ${Navegador}
+                # Click en aceptar las politicas de google 
+                Click Element   xpath=//*[@id="L2AGLb"]
+                # Esperar a que se carge un elemento de la pagina y lo localizaremos por xpath
+                Wait Until Element Is Visible 	 xpath=/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]
+
+        Modificamos el archivo ../automations/firtsautomation.robot :
+
+            *** Settings ***
+            # Referenciamos o importamos el archivo de recursos 
+            Resource    recursos1.robot
+
+            *** Test Case ***
+            # First automation
+            G001 Busqueda de palabras en google
+                # Llamamos a nuestra keyword personalizada
+                Open Browser and validate
+                # Escribir un texto en el campo de busqueda (El texto sera: Casos de prueba)
+                Input Text   xpath=/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input   ${palabrabuscar}
+                # Click en un elemento cualquiera de la pagina para quitar la barra automatica de sugerencia
+                Click Element   xpath=/html/body/div[1]/div[2]/div/img
+                # Click en el boton buscar con google
+                Click Element    xpath=/html/body/div[1]/div[3]/form/div[1]/div[1]/div[3]/center/input[1]
+                # Verificar el resultado de la busqueda utilizando el titulo de la pagina
+                Title Should Be      ${palabrabuscar} - Google Search
+                # Verificamos si el contenido deseado se encuentra en la pagina
+                Page Should Contain      ${palabrabuscar}
+                # Cerramos el navegador
+                Close Browser
+
+    - SeleniumLibrary: Creando Condicionales
+        Creamos el archivo ../automations/claseif.robot :
+
+            *** Settings ***
+            Library     SeleniumLibrary
+
+            *** Variable ***
+            ${homepage}     http://automationpractice.com/index.php
+            ${browser}      chrome
+            ${seleccion}    Women
+
+            *** Keywords ***
+            Select Women Option
+                Click Element       xpath=//*[@id="block_top_menu"]/ul/li[1]/a
+                Title Should Be     Women - My Store
+
+            Select Dresses Option
+                Click Element       xpath=//*[@id="block_top_menu"]/ul/li[2]/a
+                Title Should Be     Dresses - My Store
+
+            *** Test Case ***
+            002 Caso de prueba para validar con condicional if
+                Open Browser    ${homepage}     ${browser}
+                Wait Until Element Is Visible      xpath=//*[@id="header_logo"]/a/img
+                # Declaramos la condicional
+                Run Keyword If      '${seleccion}'=='Women'     Select Women Option     ELSE    Select Dresses Option
+                Sleep       3s
+                Close Browser
+
+    - SeleniumLibrary: Trabajar con loops y arrays
+        Creamos el archivo ../automations/advance/selenium-automation.robot :
+
+            *** Settings ***
+            Library     SeleniumLibrary
+            Library     String
+
+            *** Variable ***
+            ${browser}      chrome
+            ${homepage}     http://automationpractice.com/index.php
+
+            *** Keywords ***
+            Open homepage
+                Open Browser        ${homepage}     ${browser}
+
+            *** Test Case ***
+            C001 Click en contenedores
+                Open homepage
+                # Definir una variable global que sea un array(se declara con el @)
+                Set Global Variable     @{nombreContenedores}       //*[@id="homefeatured"]/li[1]/div/div[2]/h5/a   
+                ...     //*[@id="homefeatured"]/li[2]/div/div[2]/h5/a   //*[@id="homefeatured"]/li[3]/div/div[2]/h5/a
+
+                # Ciclo loop for
+                FOR    ${container}    IN      @{nombreContenedores}
+                    Click Element   xpath=${container}
+                    Wait Until Element Is Visible   xpath=//*[@id="center_column"]/div/div/div[2]
+                    Click Element   xpath=//*[@id="header_logo"]/a/img
+                END
+
+                Sleep                   1s
+                Close Browser
+
+    - Lo esencial de Git
+        - Inicializar un proyecto de Git en un directorio(Solo se hace una vez por repositorio)
+            git init
+
+        - Sincronizar el repositorio local git con uno en github(Solo se hace un vez por repositorio)
+            git remote add origin https://github.com/nombre_personal_github/nombre_del_repositorio_remoto.git
+                eg: git remote add origin https://github.com/augusto607/automations-QA.git
+
+        - Verificar los cambios realizados dentro de nuestro git
+            git status 
+
+        - Agregar archivos al repositorio git:
+            git add .
+
+        - Confirmar los cambios realizados(commit)
+            git commit -m "Mensaje para dejar constancia de los cambios"
+
+        - Sincronizar o subir los cambios desde nuestro repositorio local a github
+            git push -u origin Nombre_del_branch
+                eg: git push -u origin main 
+
+        - Crear un nuevo branch (Para no afectar al branch principal)
+            git checkout -b nombre_del_branch
+
+        - Verificar los branch existentes
+            git branch
+
+        - Cambiarte entre los branch existentes 
+            git checkout nombre_del_branch
+
+
+=================================================================================================
+Notes:
+================================================================================================= 
+Instalacion de RobotFramework en Mac
+    Desde la terminal:
+        pip install robotframework
+
+Documentacion oficial de los keywords de robot framework
+    https://robotframework.org/robotframework/latest/libraries/BuiltIn.html
